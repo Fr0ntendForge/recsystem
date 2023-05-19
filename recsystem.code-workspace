@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "./backend",
+      "name": "Бэкенд"
+    },
+    {
+      "path": "./frontend",
+      "name": "Фронтенд"
+    },
+    {
+      "path": "./техзадание",
+      "name": "Техзадание"
+    },
+    {
+      "path": "./",
+      "name": "root"
+    },
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {}
+  }
+}
