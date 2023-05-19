@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Formular Regular";
+    src: url("../../public/assets/fonts/Formular.woff2");
+}
+
+@font-face {
+  font-family: "Formular Medium";
+  src: url("../../public/assets/fonts/Formular-Medium.woff2");
+}
+@font-face {
+  font-family: "Formular Bold";
+  src: url("../../public/assets/fonts/Formular-Bold.woff2");
+}
+
