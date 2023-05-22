@@ -1,5 +1,5 @@
 # Базовый
-FROM node:18.16.0-alpine as development
+FROM node:18.16.0-alpine AS development
 
 # Где код выполняться будет
 # RUN mkdir /usr/src/app - воркдир создаст, если нужно права задать - ок
