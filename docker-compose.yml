@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  recs-backend:
+    container_name: recs-backend
+    build:
+      context: ./backend
+      target: development # совпадает с названием нужной секции в Dockerfile
+    restart: always
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules # В контейнере свои модули. Превент еррорс)
+    env_file:
+      - .env
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+      - 9229:9229
+    command: npm run start:dev
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      - recs-bd
+    networks:
+      - recs-inner
+
+  recs-bd:
+    container_name: recs-bd
+    image: postgres:${DATABASE_VERSION}
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASS}
+      - POSTGRES_DB=${DATABASE_NAME}
+      - PG_DATA=/var/lib/postgresql/data
+      - TZ=${TZ}
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./backend/.postgres:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - recs-inner
+
+networks:
+  recs-inner:
+    name: recs-inner
+    external: false

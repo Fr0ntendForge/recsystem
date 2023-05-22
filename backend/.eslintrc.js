@@ -21,5 +21,24 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+    }],
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      {
+        allowSingleExtends: true,
+      },
+    ],
+    'jsx-quotes': [
+      'error',
+      'prefer-single',
+    ],
+    'space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
   },
 };
